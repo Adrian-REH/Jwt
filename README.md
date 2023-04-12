@@ -250,10 +250,23 @@ app.jwt.expiration-ms=86400000
 
 ```
 ## ERRORES
-1. Al inciar lanza un error si: Agrego Properties para H2 e incluyo Swagger
+1. Ningun error
 
-## LICENCIA 
 
-```
-No se incluye en este proyecto -2023
+# Licencia
+
+```xml
+Designed and developed by 2023 adrian-reh (Adrian Ramon Elias Herrera)
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
 ```
