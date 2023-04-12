@@ -59,7 +59,14 @@ public class AuthService {
 
     public ResponseEntity<MessageResponse> register(@RequestBody RegisterRequest signUpRequest) {
 
-        // Check 1: username
+        if (signUpRequest.getPassword()==null||signUpRequest.getUsername()==null||signUpRequest.getEmail()==null){
+            return ResponseEntity.ok(new MessageResponse("Error: get into User, Email and/or Password"));
+        }
+        if (signUpRequest.getPassword().isBlank()||signUpRequest.getUsername().isBlank()||signUpRequest.getEmail().isBlank()){
+            return ResponseEntity.ok(new MessageResponse("Error: get into User, Email and/or Password"));
+
+        }
+            // Check 1: username
         if (userRepository.existsByUsername(signUpRequest.getUsername())) {
             return ResponseEntity
                     .badRequest()

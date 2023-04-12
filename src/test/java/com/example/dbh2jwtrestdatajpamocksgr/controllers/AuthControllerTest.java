@@ -106,7 +106,7 @@ class AuthControllerTest {
     @Test
     void whenRegisterRequestParmNull_thenReturnMessageResponseISE() {
         registerRequest.setNombre(null);
-        registerRequest.setApellido(null);
+        registerRequest.setApellido("");
         registerRequest.setUsername(null);
         registerRequest.setEmail(null);
         registerRequest.setPassword(null);
@@ -115,8 +115,29 @@ class AuthControllerTest {
         ResponseEntity<MessageResponse> response = testRestTemplate.postForEntity("/api/auth/register",request, MessageResponse.class);
 
 
-        assertEquals(HttpStatus.INTERNAL_SERVER_ERROR, response.getStatusCode());
-        assertEquals(500, response.getStatusCodeValue());
+        assertEquals(HttpStatus.OK, response.getStatusCode());
+        assertEquals(200, response.getStatusCodeValue());
+        assertEquals("Error: get into User, Email and/or Password", response.getBody().getMessage());
+
+
+    }
+
+
+    @Test
+    void whenRegisterRequestParmIsBlank_thenReturnMessageResponseISE() {
+        registerRequest.setNombre("");
+        registerRequest.setApellido("");
+        registerRequest.setUsername("");
+        registerRequest.setEmail("");
+        registerRequest.setPassword("");
+        HttpEntity<RegisterRequest> request = new HttpEntity<>(registerRequest, headers);
+
+        ResponseEntity<MessageResponse> response = testRestTemplate.postForEntity("/api/auth/register",request, MessageResponse.class);
+
+
+        assertEquals(HttpStatus.OK, response.getStatusCode());
+        assertEquals(200, response.getStatusCodeValue());
+        assertEquals("Error: get into User, Email and/or Password", response.getBody().getMessage());
 
 
     }
@@ -126,7 +147,7 @@ class AuthControllerTest {
         registerRequest.setNombre(null);
         registerRequest.setApellido(null);
         registerRequest.setUsername("adrian");
-        registerRequest.setEmail(null);
+        registerRequest.setEmail("@");
         registerRequest.setPassword("1234");
         HttpEntity<RegisterRequest> request = new HttpEntity<>(registerRequest, headers);
 
