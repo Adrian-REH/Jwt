@@ -166,6 +166,9 @@ Authorization: Bearer <token>
 * register
   * register
   * registerNull
+  * register_Set_Null
+  * register_UserExist
+  * register_EmailExist
 * login
   * login
   * loginNull
