@@ -42,7 +42,7 @@ class HelloControllerTest {
     }
 
     @Test
-    void hello(){
+    void whenHello_thenReturnHello(){
         HttpEntity<LoginRequest> request = new HttpEntity<>( headers);
         ResponseEntity<String> response = testRestTemplate.exchange("/api/hello", HttpMethod.GET,request, String.class);
 
@@ -54,7 +54,7 @@ class HelloControllerTest {
     }
 
     @Test
-    void hello_HeadersNull(){
+    void whenHelloHeadersNull_thenReturnUnauthorized(){
         HttpEntity<LoginRequest> request = new HttpEntity<>( null);
         ResponseEntity<String> response = testRestTemplate.exchange("/api/hello", HttpMethod.GET,request, String.class);
 

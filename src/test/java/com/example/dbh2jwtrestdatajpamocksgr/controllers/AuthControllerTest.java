@@ -1,5 +1,4 @@
 package com.example.dbh2jwtrestdatajpamocksgr.controllers;
-
 import com.example.dbh2jwtrestdatajpamocksgr.security.payload.JwtResponse;
 import com.example.dbh2jwtrestdatajpamocksgr.security.payload.LoginRequest;
 import com.example.dbh2jwtrestdatajpamocksgr.security.payload.MessageResponse;
@@ -14,12 +13,14 @@ import org.springframework.boot.web.server.LocalServerPort;
 import org.springframework.http.*;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.test.context.TestPropertySource;
 
 import java.util.Arrays;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+@TestPropertySource(locations = "/application-test.properties")
 class AuthControllerTest {
     private final RegisterRequest registerRequest = new RegisterRequest();
     private final LoginRequest loginRequest = new LoginRequest();
@@ -49,7 +50,7 @@ class AuthControllerTest {
 
 
     @Test
-    void login() {
+    void whenLogin_thenReturnJwtResponse() {
         loginRequest.setUsername("adrian");
         loginRequest.setPassword("1234");
         HttpEntity<LoginRequest> request = new HttpEntity<>(loginRequest, headers);
@@ -63,7 +64,7 @@ class AuthControllerTest {
     }
 
     @Test
-    void login_Null() {
+    void whenLoginRequestNull_thenReturnJwtResponseNull() {
         ResponseEntity<JwtResponse> response = testRestTemplate.postForEntity("/api/auth/login",null, JwtResponse.class);
 
         JwtResponse result = response.getBody();
@@ -71,11 +72,12 @@ class AuthControllerTest {
         assertEquals(415, response.getStatusCodeValue());
         assertEquals(null, result.getToken());
 
+        System.out.println(result);
 
     }
 
     @Test
-    void register() {
+    void whenRegister_thenReturnMessageResponse() {
         registerRequest.setNombre("adrian");
         registerRequest.setApellido("herrera");
         registerRequest.setUsername("adm");//Se guarda en el servidor por ende hay que tener cuidado
@@ -93,7 +95,7 @@ class AuthControllerTest {
     }
 
     @Test
-    void register_Null() {
+    void whenRegisterRequestNull_thenReturnMessageResponseUMT() {
         ResponseEntity<String > response = testRestTemplate.postForEntity("/api/auth/login",null, String.class);
 
         assertEquals(HttpStatus.UNSUPPORTED_MEDIA_TYPE, response.getStatusCode());
@@ -102,7 +104,7 @@ class AuthControllerTest {
     }
 
     @Test
-    void register_Set_Null() {
+    void whenRegisterRequestParmNull_thenReturnMessageResponseISE() {
         registerRequest.setNombre(null);
         registerRequest.setApellido(null);
         registerRequest.setUsername(null);
@@ -120,7 +122,7 @@ class AuthControllerTest {
     }
 
     @Test
-    void register_UserExist() {
+    void whenRegisterUsernameExist_thenReturnMessageResponseUsernameExist() {
         registerRequest.setNombre(null);
         registerRequest.setApellido(null);
         registerRequest.setUsername("adrian");
@@ -137,7 +139,7 @@ class AuthControllerTest {
 
     }
     @Test
-    void register_EmailExist() {
+    void whenRegisterEmailExist_thenReturnMessageResponseEmailExist() {
         registerRequest.setNombre(null);
         registerRequest.setApellido(null);
         registerRequest.setUsername("dex");
