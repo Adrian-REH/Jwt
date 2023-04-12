@@ -232,13 +232,13 @@ Crear proyecto Spring Boot con:
 
 * PROPERTIES (H2)
 ```
-spring.datasource.url=jdbc:postgresql://localhost:5432/springpostgre
-spring.datasource.username=postgres
-spring.datasource.password=admin
-spring.datasource.driver-class-name=org.postgresql.Driver
 spring.jpa.show-sql=true
-spring.jpa.hibernate.ddl-auto=create
-spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.PostgreSQLDialect
+spring.datasource.url=jdbc:h2:file:C:/data/sample
+spring.datasource.username=sa
+spring.datasource.password=
+spring.datasource.driverClassName=org.h2.Driver
+#spring.jpa.hibernate.ddl-auto=creat
+spring.jpa.hibernate.ddl-auto=update
 spring.sql.init.mode=always
 spring.jpa.defer-datasource-initialization=true
 ```
