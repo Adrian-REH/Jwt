@@ -252,7 +252,7 @@ app.jwt.expiration-ms=86400000
 ## ERRORES
 1. Al inciar lanza un error si: Agrego Properties para H2 e incluyo Swagger
 
-# LICENCIA 
+# License 
 
 ```xml
 Designed and developed by 2022 adrian-reh (Adrian Ramon Elias Herrera)
