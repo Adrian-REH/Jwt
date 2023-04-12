@@ -250,7 +250,7 @@ app.jwt.expiration-ms=86400000
 
 ```
 ## ERRORES
-1. Ningun error
+1. Ningun error :)
 
 # Licencia
 
