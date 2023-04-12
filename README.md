@@ -230,17 +230,23 @@ Crear proyecto Spring Boot con:
 </dependency>
 ```
 
-* PROPERTIES (H2)
+* PROPERTIES (H2 y JWT)
 ```
+#Preparo e Inicializo H2
 spring.jpa.show-sql=true
 spring.datasource.url=jdbc:h2:file:C:/data/sample
 spring.datasource.username=sa
 spring.datasource.password=
+spring.jpa.database-platform=org.hibernate.dialect.H2Dialect
 spring.datasource.driverClassName=org.h2.Driver
-#spring.jpa.hibernate.ddl-auto=creat
 spring.jpa.hibernate.ddl-auto=update
 spring.sql.init.mode=always
 spring.jpa.defer-datasource-initialization=true
+
+#Configuro JWT
+app.jwt.secret=openb
+app.jwt.expiration-ms=86400000
+
 ```
 ## ERRORES
 1. Al inciar lanza un error si: Agrego Properties para H2 e incluyo Swagger
