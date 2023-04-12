@@ -31,7 +31,6 @@ class AuthControllerTest {
     @Autowired
     private RestTemplateBuilder restTemplateBuilder;
 
-
     @LocalServerPort
     private int port;
 
