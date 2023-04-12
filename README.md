@@ -128,9 +128,9 @@ Authorization: Bearer <token>
 ## TEST
  Utilizo Mockito para Testear Service y controller a pesar de que es posible hacerlo con Spring Test me llevo mejor haciendolo con Mockito
 ### Estructura MOCKITO
-1.  MVC builder
+1.  Spring Anotation
 ```java
-    private MockMvc mockMvc;
+    @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 ```
 2. Headers
 ```java
@@ -139,26 +139,26 @@ Authorization: Bearer <token>
 ```
 3. Objects
 ```java
-    private static final User USER_1 = new User("user","password");
-    private static final User USER_2 = new User("user1","password1");
-    private final List<User> records= new  ArrayList<User>(Arrays.asList(USER_1, USER_2));
-  
+    private final RegisterRequest registerRequest = new RegisterRequest();
+    private final LoginRequest loginRequest = new LoginRequest();
 ```
-1. Mock e Inject
+1.  Templeate and Port
 ```java
-    @Mock
-    private LaptopService laptopService;
+    private TestRestTemplate testRestTemplate;
 
-    @InjectMocks
-    private LaptopController laptopController;
+    @Autowired
+    private RestTemplateBuilder restTemplateBuilder;
+    @LocalServerPort
+    private int port;
 
 ```
 2. Build
 ```java
     @BeforeEach
     public void setUp(){
-        MockitoAnnotations.initMocks(this);
-        this.mockMvc = MockMvcBuilders.standaloneSetup(laptopController).build();
+        restTemplateBuilder = restTemplateBuilder.defaultHeader("Authorization","sd")
+                .rootUri("http://localhost:"+port);
+        testRestTemplate= new TestRestTemplate(restTemplateBuilder);
         headers.add("Authorization", "laptop-value-45xx23");
     }
 ```
