@@ -250,7 +250,7 @@ app.jwt.expiration-ms=86400000
 
 ```
 ## ERRORES
-1. Por el momento ninguno :)
+1. Por el momento ninguno =)
 ## LICENCIA 
 ```
 No se incluye en este proyecto -2023
