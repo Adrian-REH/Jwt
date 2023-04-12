@@ -125,7 +125,7 @@ Authorization: Bearer <token>
 
 ## TEST
  Utilizo Spring test
-### Estructura 
+### Test de Integración con TestRestTemplate 
 1.  Spring Anotation
 ```java
     @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
@@ -159,6 +159,19 @@ Authorization: Bearer <token>
         testRestTemplate= new TestRestTemplate(restTemplateBuilder);
         headers.add("Authorization", "laptop-value-45xx23");
     }
+```
+### Test de Integración  con @DataJpaTest
+1. Anotación
+```java
+  @DataJpaTest
+```
+2. Uso de metodos JPA
+```java
+    @Autowired
+    private TestEntityManager entityManager;
+    
+    @Autowired
+    private UserRepository userRepository;
 ```
 ### Services y Controllers
 * register
