@@ -255,7 +255,7 @@ app.jwt.expiration-ms=86400000
 # License 
 
 ```xml
-Designed and developed by 2022 adrian-reh (Adrian Ramon Elias Herrera)
+Designed and developed by 2023 adrian-reh (Adrian Ramon Elias Herrera)
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
