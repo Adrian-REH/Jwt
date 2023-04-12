@@ -8,8 +8,8 @@ Detalles:
 │   ├── AuthController.java
 │   └── UserController.java
 ├── dtos
-│   ├── AuthRequestDto.java
-│   └── UserDto.java
+│   ├── _.java
+│   └── _.java
 ├── entities
 │   └── User.java
 ├── repositories
@@ -29,14 +29,12 @@ Detalles:
 │   └── service
 │       └── UserDetailsServiceImpl.java
 ├── services
-│   ├── UserService.java
-│   └── JwtServiceTest.java
+│   ├── AuthService.java
 ├── config
-│   └── WebConfig.java
+│   └── SwaggerConfig.java
 ── test
     └── controllers
-       ├── AuthControllerTest.java
-       └── UserControllerTest.java
+       └── AuthControllerTest.java
 
 
 ```
