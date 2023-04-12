@@ -126,8 +126,8 @@ Authorization: Bearer <token>
 
 
 ## TEST
- Utilizo Mockito para Testear Service y controller a pesar de que es posible hacerlo con Spring Test me llevo mejor haciendolo con Mockito
-### Estructura MOCKITO
+ Utilizo Spring test
+### Estructura 
 1.  Spring Anotation
 ```java
     @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
