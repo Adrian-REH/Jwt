@@ -242,6 +242,9 @@ spring.jpa.hibernate.ddl-auto=update
 spring.sql.init.mode=always
 spring.jpa.defer-datasource-initialization=true
 ```
+# ERRORES
+1. Al inciar lanza un error si: Agrego Properties para H2 e incluyo Swagger
+
 # LICENCIA 
 ```
 No se incluye en este proyecto -2023
