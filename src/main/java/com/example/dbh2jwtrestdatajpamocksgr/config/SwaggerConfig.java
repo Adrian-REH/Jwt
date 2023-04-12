@@ -64,9 +64,9 @@ public class SwaggerConfig {
                 "Pruebas Spring Boot API REST",
                 "1.0",
                 "http://localhost/terms",
-                new Contact("Prueba","Prueba","Prueba"),
-                "Prueba",
-                "Prueba",
+                new Contact("Adrian","Prueba","adrianherrera.r.e@gmail.com"),
+                "APACHE LICENSE, VERSION 2.0",
+                "https://www.apache.org/licenses/LICENSE-2.0",
                 Collections.emptyList());
     }
 

@@ -21,4 +21,10 @@ public class JwtResponse {
         this.token = token;
     }
 
+    @Override
+    public String toString() {
+        return "JwtResponse{" +
+                "token='" + token + '\'' +
+                '}';
+    }
 }

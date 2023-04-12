@@ -6,6 +6,8 @@ package com.example.dbh2jwtrestdatajpamocksgr.security.payload;
 public class RegisterRequest {
 
     private String username;
+    private String Nombre;
+    private String Apellido;
     private String email;
     private String password;
 
@@ -31,5 +33,32 @@ public class RegisterRequest {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getNombre() {
+        return Nombre;
+    }
+
+    public void setNombre(String nombre) {
+        Nombre = nombre;
+    }
+
+    public String getApellido() {
+        return Apellido;
+    }
+
+    public void setApellido(String apellido) {
+        Apellido = apellido;
+    }
+
+    @Override
+    public String toString() {
+        return "RegisterRequest{" +
+                "username='" + username + '\'' +
+                ", Nombre='" + Nombre + '\'' +
+                ", Apellido='" + Apellido + '\'' +
+                ", email='" + email + '\'' +
+                ", password='" + password + '\'' +
+                '}';
     }
 }
