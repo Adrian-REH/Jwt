@@ -250,8 +250,7 @@ app.jwt.expiration-ms=86400000
 
 ```
 ## ERRORES
-1. Al inciar lanza un error si: Agrego Properties para H2 e incluyo Swagger
-
+1. Por el momento ninguno :)
 ## LICENCIA 
 ```
 No se incluye en este proyecto -2023
