@@ -2,7 +2,7 @@
 
 Detalles:
 
-# ARCHITECTURE MVC
+## ARCHITECTURE MVC
 ```
 ├── controllers
 │   ├── AuthController.java
@@ -40,14 +40,14 @@ Detalles:
 
 
 ```
-# JWT y SESSION
+## JWT y SESSION
 
 https://jwt.io
 
 Es un estandar abierto que permite transmitir informacion entre dos partes:
 
 JSON web Token
-## Funcionamiento Session
+### Funcionamiento Session
 1. Cliente envia una peticion a un servidor (/api/login)
 2. Servidor valida el username y la password, Si no son validos devolvera una respuesta 401 unauthorized
 3. Servidor valida el username y la password, Si son validos entonces se almacena el usuario en session
@@ -58,7 +58,7 @@ Desventajas:
 
 * La informacion de la session se almacena en el servidor, lo cual consume recursos.
 
-## Funcionamiento JWT
+### Funcionamiento JWT
 1. Cliente envia una peticion a un servidor (/api/login)
 2. Servidor valida el username y la password, Si no son validos devolvera una respuesta 401 unauthorized
 3. Servidor valida el username y la password, Si son validos entonces genera un Token JWT utilizando una secret key
@@ -77,7 +77,7 @@ Desventajas:
     * Lo que se realiza es dar la opcion de logout, lo cual simplemente borra el token.
 
 
-## Estructura del token JWT
+### Estructura del token JWT
 
 
 3 Partes separadas por un punto (.) y codificadas en base 64 cada una:
@@ -125,7 +125,7 @@ Authorization: Bearer <token>
 
 
 
-# TEST
+## TEST
  Utilizo Mockito para Testear Service y controller a pesar de que es posible hacerlo con Spring Test me llevo mejor haciendolo con Mockito
 ### Estructura MOCKITO
 1.  MVC builder
@@ -193,7 +193,7 @@ Authorization: Bearer <token>
 _No se incluiran en el proyecto: Recuperacion de contraseña ni de usuario_
 
 
-# CONFIG SPRING
+## CONFIG SPRING
 
 Crear proyecto Spring Boot con:
 
@@ -242,10 +242,10 @@ spring.jpa.hibernate.ddl-auto=update
 spring.sql.init.mode=always
 spring.jpa.defer-datasource-initialization=true
 ```
-# ERRORES
+## ERRORES
 1. Al inciar lanza un error si: Agrego Properties para H2 e incluyo Swagger
 
-# LICENCIA 
+## LICENCIA 
 ```
 No se incluye en este proyecto -2023
 ```
