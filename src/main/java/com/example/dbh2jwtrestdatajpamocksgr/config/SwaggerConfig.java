@@ -60,7 +60,7 @@ public class SwaggerConfig {
 
     private ApiInfo apiDetails() {
 
-        return new ApiInfo("Awesome API REST",
+        return new ApiInfo("JWT API AUTH",
                 "Pruebas Spring Boot API REST",
                 "1.0",
                 "http://localhost/terms",

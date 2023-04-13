@@ -57,7 +57,7 @@ public class AuthService {
 
 
 
-    public ResponseEntity<MessageResponse> register(@RequestBody RegisterRequest signUpRequest) {
+    public ResponseEntity<MessageResponse> register( RegisterRequest signUpRequest) {
 
         if (signUpRequest.getPassword()==null||signUpRequest.getUsername()==null||signUpRequest.getEmail()==null){
             return ResponseEntity.ok(new MessageResponse("Error: get into User, Email and/or Password"));
@@ -94,7 +94,7 @@ public class AuthService {
      * @param signUpRequest
      * @return
      */
-    public ResponseEntity<MessageResponse> update(@RequestBody RegisterRequest signUpRequest) {
+    public ResponseEntity<MessageResponse> update( RegisterRequest signUpRequest) {
         User user = new User(null,signUpRequest.getUsername(),signUpRequest.getNombre(),signUpRequest.getApellido(),signUpRequest.getEmail(),encoder.encode(signUpRequest.getPassword()));
 
         // Check 1: username
@@ -120,7 +120,7 @@ public class AuthService {
      * @param signUpRequest
      * @return
      */
-    public ResponseEntity<MessageResponse> delete(@RequestBody RegisterRequest signUpRequest) {
+    public ResponseEntity<MessageResponse> delete( RegisterRequest signUpRequest) {
         User user = new User(null,signUpRequest.getUsername(),signUpRequest.getNombre(),signUpRequest.getApellido(),signUpRequest.getEmail(),encoder.encode(signUpRequest.getPassword()));
 
         // Check 1: username
