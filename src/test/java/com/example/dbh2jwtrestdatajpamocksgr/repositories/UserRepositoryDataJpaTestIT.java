@@ -16,7 +16,19 @@ public class UserRepositoryDataJpaTestIT {
 
     @Autowired
     private UserRepository userRepository;
+    @Test
+    public void whenSaveUsername_thenReturnUser(){
+        User user = createUser();
+        entityManager.persist(user);
+        entityManager.flush();
 
+        User b = userRepository.save(user);
+        assertThat(b.getUsername())
+                .isEqualTo(user.getUsername());
+
+
+
+    }
 
     @Test
     public void whenFindByUsername_thenReturnUser(){
